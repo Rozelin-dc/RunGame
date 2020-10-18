@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GoalManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject goalText;
     private bool isGoal = false;
+    private RestartManager restart;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        restart = new RestartManager(player, goalText);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class GoalManager : MonoBehaviour
     {
         if(isGoal && Input.GetMouseButton(0))
         {
-            Restart();
+            restart.Restart();
         }
     }
 
@@ -29,15 +29,8 @@ public class GoalManager : MonoBehaviour
     {
         if(other.name == player.name)
         {
-            goalText.GetComponent<Text>().text = "Goal!\n画面クリックで再スタート";
-            goalText.SetActive(true);
+            restart.PrintGoal();
             isGoal = true;
         }
-    }
-
-    private void Restart()
-    {
-        Scene loadScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(loadScene.name);
     }
 }

@@ -7,7 +7,6 @@ public class GoalManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject goalText;
-    private bool isGoal = false;
     private RestartManager restart;
 
     // Start is called before the first frame update
@@ -19,7 +18,7 @@ public class GoalManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isGoal && Input.GetMouseButton(0))
+        if(restart.IsGameOver() && Input.GetMouseButton(0))
         {
             restart.Restart();
         }
@@ -30,7 +29,6 @@ public class GoalManager : MonoBehaviour
         if(other.name == player.name)
         {
             restart.PrintGoal();
-            isGoal = true;
         }
     }
 }

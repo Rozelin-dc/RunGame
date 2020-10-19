@@ -34,6 +34,11 @@ public class TimeManager : MonoBehaviour
             return;
         }
 
+        if (restart.IsGameOver())
+        {
+            return;
+        }
+
         limit -= Time.deltaTime;
         timeText.text = "残り時間:" + limit.ToString("f1") + "秒";
     }

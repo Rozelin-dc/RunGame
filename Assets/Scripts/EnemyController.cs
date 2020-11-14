@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityChan;
 
 public class EnemyController : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!target.GetComponent<UnityChanControlScriptWithRgidBody>().enabled)
+        {
+            agent.isStopped = true;
+        }
+
         agent.destination = target.position;
     }
 }

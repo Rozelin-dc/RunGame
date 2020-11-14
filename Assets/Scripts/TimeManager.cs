@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityChan;
 
 public class TimeManager : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class TimeManager : MonoBehaviour
         if (limit < 0)
         {
             restart.PrintGameOver();
+            return;
+        }
+
+        if (!player.GetComponent<UnityChanControlScriptWithRgidBody>().enabled)
+        {
             return;
         }
 

@@ -21,7 +21,7 @@ public class RestartManager : MonoBehaviour
     public void PrintGameOver()
     {
         //ゲームオーバーを表示する
-        text.GetComponent<Text>().text = "GameOver...";
+        text.GetComponent<Text>().text = "GameOver...\nClick to return to top.";
         text.SetActive(true);
  
         //ユニティちゃんを動けなくする
@@ -35,7 +35,7 @@ public class RestartManager : MonoBehaviour
 
     public void PrintGoal()
     {
-        text.GetComponent<Text>().text = "Goal!\n画面クリックで再スタート";
+        text.GetComponent<Text>().text = "Goal!\nClick to return to top.";
         text.SetActive(true);
  
         //ユニティちゃんを動けなくする
@@ -47,10 +47,7 @@ public class RestartManager : MonoBehaviour
 
     public void Restart()
     {
-        // 現在のScene名を取得する
-        Scene loadScene = SceneManager.GetActiveScene();
-        // Sceneの読み直し
-        SceneManager.LoadScene(loadScene.name);
+        SceneManager.LoadScene("TopMenu");
     }
 
     public bool IsGameOver()

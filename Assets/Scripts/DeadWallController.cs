@@ -7,8 +7,9 @@ using UnityChan;
 
 public class DeadWallController : MonoBehaviour
 {
-    public float speed = 0.05f;
-    public float max_x = 10.0f;
+    public float speed;
+    public float max;
+    public char tra;
     public GameObject player;
     public GameObject text;
     private RestartManager restart;
@@ -22,15 +23,29 @@ public class DeadWallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.Translate(speed, 0, 0);
-        if (this.gameObject.transform.position.x > max_x || this.gameObject.transform.position.x < (-max_x))
-        {
-            speed *= -1;
-        }
-
         if (restart.IsGameOver() && Input.GetMouseButton(0))
         {
             restart.Restart();
+        }
+
+        if (tra == 'x')
+        {
+            this.gameObject.transform.Translate(speed, 0, 0);
+            if (this.gameObject.transform.position.x > max || this.gameObject.transform.position.x < (-max))
+            {
+                speed *= -1;
+                return;
+            }
+        }
+
+        if (tra == 'z')
+        {
+            this.gameObject.transform.Translate(0, 0, speed);
+            if (this.gameObject.transform.position.z > max || this.gameObject.transform.position.z < (-max))
+            {
+                speed *= -1;
+                return;
+            }
         }
     }
 

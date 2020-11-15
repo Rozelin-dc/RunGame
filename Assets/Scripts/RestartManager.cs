@@ -47,6 +47,7 @@ public class RestartManager : MonoBehaviour
 
     public void Restart()
     {
+        // トップに戻る
         SceneManager.LoadScene("TopMenu");
     }
 

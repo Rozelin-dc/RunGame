@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
-  max_x: 10
+  max: 10
+  tra: 120
 --- !u!208 &6598583582071655401
 NavMeshObstacle:
   m_ObjectHideFlags: 0

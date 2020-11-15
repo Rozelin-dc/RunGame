@@ -29,13 +29,13 @@ public class MenuController : MonoBehaviour
             return;
         }
 
-        /* if (Input.GetKey("2") && text.GetComponent<Text>().text == "Select stage\n\n1, 2, 3")
+        if (Input.GetKey("2") && text.GetComponent<Text>().text == "Select stage\n\n1, 2, 3")
         {
             SceneManager.LoadScene("Game2");
             return;
         }
 
-        if (Input.GetKey("3") && text.GetComponent<Text>().text == "Select stage\n\n1, 2, 3")
+        /* if (Input.GetKey("3") && text.GetComponent<Text>().text == "Select stage\n\n1, 2, 3")
         {
             SceneManager.LoadScene("Game3");
             return;

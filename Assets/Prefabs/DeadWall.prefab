@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
-  max_x: 10
+  max: 10
+  tra: 120
 --- !u!114 &5693670886982771016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
-  max_x: 10
+  max: 0
+  tra: 0
   player: {fileID: 0}
   text: {fileID: 0}
 --- !u!208 &6824699223093840872
